@@ -29,7 +29,10 @@ public static String Pass = "root"; // Replace with your DB user password
 			DBConnection.addRow("evento2", "Sono una descrizione");
 			System.out.println(DBConnection.getLineById(DBConnection.getLastId()));
 			tabella = DBConnection.getAll();
-			
+			for (int key : tabella.keySet()) {
+			    System.out.println(tabella.get(key));
+			    System.out.println(" --- ");
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

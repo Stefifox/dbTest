@@ -23,14 +23,13 @@ public class DBConnection {
 		return id;
 		
 		
-		
 	}
 	
 	public static void addRow(String event_name, String description) throws SQLException {
 		
 
 		Connection connection = DriverManager.getConnection(Main.Connection, Main.User, Main.Pass );
-		PreparedStatement prepared = connection.prepareStatement("INSERT INTO " + Main.tableName + " (id, date, event_name, description) VALUES (?,?,?,?)");
+		PreparedStatement prepared = connection.prepareStatement("INSERT INTO " + Main.tableName + " (id, data, event_name, description) VALUES (?,?,?,?)");
 		Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"),Locale.ITALY);
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		
