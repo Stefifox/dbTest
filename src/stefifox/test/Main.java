@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Main {
 
-public static String Connection = "jdbc:mysql://localhost:3306/provaDB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; //Replace "provaDB" with your DB name and UTC with your Timezone
+public static String connectorUrl = "jdbc:mysql://localhost:3306/provaDB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; //Replace "provaDB" with your DB name and UTC with your Timezone
 public static String tableName = "event"; // Replace with your table name
 
 public static String User = "root"; // Replace with your DB User
