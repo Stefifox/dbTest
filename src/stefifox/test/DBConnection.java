@@ -14,12 +14,15 @@ public class DBConnection {
 		Statement stm = connection.createStatement();
 		ResultSet rs=stm.executeQuery("SELECT id FROM " + Main.tableName);
 		
-		while(rs.next()) {
-			id=rs.getInt(1);
-		}
-		
+		try {
+			while(rs.next()) {
+				id=rs.getInt(1);
+			}
+		}catch(SQLException e) {
+			stm.close();
+			return 0;
+		}		
 		stm.close();
-		
 		return id;
 		
 		
@@ -51,7 +54,14 @@ public class DBConnection {
 		ResultSet rs=stm.executeQuery("SELECT * FROM " + Main.tableName + " WHERE id = " + getLastId());
 		
 		rs.next();
-		return rs.getInt(1) + " - " + rs.getString(2) + " - " + rs.getString(3) + " - " + rs.getString(4);
+		String temp;
+		try {
+			temp = rs.getInt(1) + " - " + rs.getString(2) + " - " + rs.getString(3) + " - " + rs.getString(4);
+		}catch(SQLException e){
+			temp = "The table is empity";
+		}
+		stm.close();
+		return temp;
 		
 		
 	}
@@ -63,7 +73,9 @@ public class DBConnection {
 		ResultSet rs=stm.executeQuery("SELECT * FROM " + Main.tableName + " WHERE id = " + id);
 		
 		rs.next();
-		return rs.getInt(1) + " - " + rs.getString(2) + " - " + rs.getString(3) + " - " + rs.getString(4);
+		String temp = rs.getInt(1) + " - " + rs.getString(2) + " - " + rs.getString(3) + " - " + rs.getString(4);
+		stm.close();
+		return temp;
 		
 		
 	}

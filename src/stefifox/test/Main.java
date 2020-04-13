@@ -26,8 +26,9 @@ public static String Pass = "root"; // Replace with your DB user password
 		
 		try {
 			System.out.println(DBConnection.getLastLineById());
-			DBConnection.addRow("evento2", "Sono una descrizione");
+			DBConnection.addRow("Pasquetta", "Si Mangia");
 			System.out.println(DBConnection.getLineById(DBConnection.getLastId()));
+			//Print all map
 			tabella = DBConnection.getAll();
 			for (int key : tabella.keySet()) {
 			    System.out.println(tabella.get(key));
