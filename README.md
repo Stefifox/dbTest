@@ -18,7 +18,7 @@ For windows users I suggest to use MySQL installer [Link](https://dev.mysql.com/
 ## and uses
 First you need to make a Database and Table, you need to start mysql using root account.
 
-Open terminal and:
+Open terminal and type:
 
 Linux (I use Ubuntu 18)
 
@@ -79,4 +79,31 @@ For more option or example please read the official tutorials provided in offici
 
 ----
 # Java code
-[ WORK IN PROGRESS ]
+
+Adding to build path the correct library:
+- Search the path of Connector/J installed in your computer. In my case ```C:\Program Files (x86)\MySQL\Connector J 8.0``` .
+- Open your IDE and in build path settings add *mysql-connector-java-[version].jar* .
+- Select apply and close.
+
+In java Main class import the Driver
+```
+try{
+	Class.forName("com.mysql.cj.jdbc.Driver");
+}catch (ClassNotFoundException e){
+	e.printStackTrace();
+}
+```
+
+Now we need to connect of our database, for do this we can use a String for database URL, and two Strings for Username and Password.
+
+```
+public static String connectorUrl = "jdbc:mysql://localhost:3306/provaDB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; //Replace "provaDB" with your DB name and UTC with your Timezone
+public static String tableName = "event"; // Replace with your table name
+
+public static String User = "root"; // Replace with your DB User
+public static String Pass = "root"; // Replace with your DB user password 
+```
+
+And now we can start to add, remove or edit our database's row.
+
+Some example are provided in DBConnection.java file. [Link](https://github.com/Stefifox/dbTest/blob/master/src/stefifox/test/DBConnection.java)
