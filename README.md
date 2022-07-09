@@ -103,6 +103,6 @@ public static String User = "root"; // Replace with your DB User
 public static String Pass = "root"; // Replace with your DB user password 
 ```
 
-We can finally start to add, remove or edit our database rows.
+We can finally start to add, remove or edit our database rows
 
 Some other examples are provided into my DBConnection.java file: [Link](https://github.com/Stefifox/dbTest/blob/master/src/stefifox/test/DBConnection.java)
