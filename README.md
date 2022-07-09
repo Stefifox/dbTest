@@ -1,4 +1,4 @@
-# MySQL DATABASES Test
+# MySQL Database Test
 This is a little test of Java databases and MySQL tables. In this README I provide some examples of my tables and some snippets in order to implement databases in Java applications.
 
 ----
