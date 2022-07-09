@@ -18,11 +18,11 @@ The first thing you need to do is start mysql using the root account.
 
 Open the terminal and enter the following commands:
 
-**Linux** (I use Ubuntu 18.10)
+- **Linux** (I use Ubuntu 18.10)
 
 ```mysql -u root -p```
 
-**Windows**
+- **Windows**
 
 ```mysqlsh -u root -p```
 
